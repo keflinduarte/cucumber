@@ -1,0 +1,25 @@
+CUCUMBER
+
+BDD - solve the gap between business and dev
+
+BDD Tools : Cucumber, Jbehave, Nbehave, SpecFlow
+
+Channel : BDD and SpecFlow
+
+-------------------------------------------------------------------
+IDE : IntelliJ
+Jar Files : cucumber-core, cucumber-java, cucumber-java-deps, cucumber-jvm, gherkin, selenium (and its related jars)
+
+---------------------------------------------------------------------
+
+Support Maven : Add Framework Support > Check Maven > Ok
+Go to Mavan Repository website > cucumber java (https://mvnrepository.com/artifact/info.cukes/cucumber-java/1.2.5)
+Add the cucumber dependencies into Intellij
+Cucumber Plugin : Ctrl + Alt + S : Cucumber for Java > Install
+
+Under src folder, create : Features > Login.feature
+
+-------------------------------------------------------------------
+
+Hooks : @Before and @After
+
