@@ -18,7 +18,8 @@ public class Hook extends BaseUtil{
     public void InitializeTest() {
         System.out.println("Opening the browser : Firefox");
 
-        System.setProperty("webdriver.firefox.driver", "C:\\Users\\knro\\workspace\\cucumber\\geckodriver-v0.20.0-win64\\geckodriver.exe");
+        System.setProperty("webdriver.firefox.bin", "C:\\Users\\knro\\AppData\\Local\\Mozilla Firefox\\firefox.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\Users\\knro\\workspace\\cucumber\\geckodriver-v0.20.0-win64\\geckodriver.exe");
         Driver = new FirefoxDriver();
 
     }
