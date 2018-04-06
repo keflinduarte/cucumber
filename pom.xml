@@ -16,6 +16,13 @@
             <version>1.2.5</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-picocontainer -->
         <dependency>
             <groupId>info.cukes</groupId>
@@ -27,7 +34,7 @@
         <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java8 -->
         <dependency>
             <groupId>info.cukes</groupId>
-            <artifactId>cucumber-java8</artifactId>
+            <artifactId>cucumber-java</artifactId>
             <version>1.2.5</version>
         </dependency>
 
@@ -38,6 +45,13 @@
             <version>3.11.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 </project>

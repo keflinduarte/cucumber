@@ -22,6 +22,9 @@ public class Hook extends BaseUtil{
         System.setProperty("webdriver.gecko.driver", "C:\\Users\\knro\\workspace\\cucumber\\geckodriver-v0.20.0-win64\\geckodriver.exe");
         Driver = new FirefoxDriver();
 
+        Driver.manage().window().maximize();
+        Driver.navigate().to("http://www.executeautomation.com/demosite/Login.html");
+
     }
 
     @After
@@ -32,5 +35,6 @@ public class Hook extends BaseUtil{
             System.out.println(scenario.getName());
         }
         System.out.println("Closing the browser : Firefox");
+        Driver.quit();
     }
 }
