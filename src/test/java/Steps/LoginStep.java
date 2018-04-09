@@ -1,78 +1,40 @@
 package Steps;
 
 import Base.BaseUtil;
-import cucumber.api.DataTable;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.LoginPage;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class LoginStep extends BaseUtil{
 
-    private BaseUtil base;
-
-    public LoginStep(BaseUtil base) {
-        this.base = base;
-    }
-
-    @Then("^I should see the userform page$")
-
-    public void iShouldSeeTheUserformPage() throws Throwable {
-        //Assert.assertEquals("Its not displayed", base.Driver.findElement(By.id("Initial")).isDisplayed(), true);
-    }
+    WebDriver driver;
 
     @Given("^I navigate to the login page$")
-    public void iNavigateToTheLoginPage() throws Throwable {
+    public void INavigateToTheLoginPage(){
+        System.out.println("Page is open");
 
-        System.out.println(":: Navigate Login Page ::");
+        System.setProperty("webdriver.firefox.bin", "C:\\Users\\knro\\AppData\\Local\\Mozilla Firefox\\firefox.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\Users\\knro\\workspace\\cucumber\\geckodriver-v0.20.0-win64\\geckodriver.exe");
+        driver = new FirefoxDriver();
+        driver.manage().window().maximize();
+        driver.get("http://www.executeautomation.com/demosite/Login.html");
     }
 
-    @And("^I click login button$")
-    public void iClickLoginButton() throws Throwable {
+    @And("^I enter UserName and Password$")
+    public void iEnterUserNameAndPassword() throws Throwable {
+        System.out.println("Testing Step");
 
-        //LoginPage page = new LoginPage(base.Driver);
-        //page.ClickLogin();
+        driver.findElement(By.name("UserName")).sendKeys("admin");
+        driver.findElement(By.name("Password")).sendKeys("123456");
     }
 
-    @And("^I enter the following for Login$")
-    public void iEnterTheFollowingForLogin(DataTable table) throws Throwable {
-
-        //Create an ArrayList
-        List<User> users =  new ArrayList<User>();
-
-        System.out.println("Users is ok");
-
-        //Store all the users
-        users = table.asList(User.class);
-
-        LoginPage page = new LoginPage(base.Driver);
-
-        for (User user : users) {
-
-            page.Login(user.username, user.password);
-
-        }
-    }
-
-    /* @And("^I enter ([^\"]*) and ([^\"]*)$")
-    public void iEnterUsernameAndPassword(String userName, String password) throws Throwable {
-
-        System.out.println("UserName is : " + userName);
-        System.out.println("Password is : " + password);
-    }*/
-
-    public class User {
-        public String username;
-        public String password;
-
-        public User(String userName, String passWord) {
-            username = userName;
-            password = passWord;
-        }
+    @And("^I click on Login button$")
+    public void iClickOnLoginButton() throws Throwable {
+        LoginPage page = new LoginPage(driver);
+        page.clickLogin();
     }
 }
