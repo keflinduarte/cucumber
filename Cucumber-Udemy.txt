@@ -23,3 +23,11 @@ Under src folder, create : Features > Login.feature
 
 Hooks : @Before and @After
 
+https://github.com/executeautomation/SeleniumWithCucucumber/tree/master/src/test/java/steps
+
+https://github.com/damianszczepanik/cucumber-reporting
+
+mvn clean
+mvn compile
+mvn verify
+
